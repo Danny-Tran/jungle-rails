@@ -41,6 +41,11 @@ cat1.products.create!({
   image: open_asset('apparel1.jpg'),
   quantity: 10,
   price: 64.99
+}).review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: "i like this shirt",
+  rating: 4
 })
 
 cat1.products.create!({
@@ -120,7 +125,7 @@ cat3.products.create!({
   name:  'Electric Chair',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture2.jpg'),
-  quantity: 0,
+  quantity: 10,
   price: 987.65
 })
 
