@@ -2,19 +2,21 @@
 
 A mini e-commerce application built with Rails 4.2,
 
+
 ## Pictrue
 
+* !["Front Page"](https://github.com/Danny-Tran/jungle-rails/blob/master/doc/Frontpage.png)
+* !["Product Review"](https://github.com/Danny-Tran/jungle-rails/blob/master/doc/product_review.png)
 
-## Example Code
 
-
-##Stack
+## Stack
 * Rails
 * Ruby
 * RSpec
 * Poltergeist/Capybara
 * ERB
 * Boostrap
+
 
 ## Setup
 
