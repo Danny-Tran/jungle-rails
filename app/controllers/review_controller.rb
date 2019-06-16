@@ -1,5 +1,6 @@
 class ReviewController < ApplicationController
-
+    before_filter :create, :destroy
+    
     def create
         @review = Review.new(review_params)
         @review.user_id = current_user.id
@@ -8,7 +9,7 @@ class ReviewController < ApplicationController
         if @review.save
             # @review.save
             redirect_to "/products/#{params[:product_id]}"
-        else
+            else
             p @review.errors
             redirect_to :back
         end
