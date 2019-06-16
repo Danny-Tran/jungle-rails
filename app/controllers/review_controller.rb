@@ -2,7 +2,7 @@ class ReviewController < ApplicationController
 
     def create
         @review = Review.new(review_params)
-        @review.user_id = current_user
+        @review.user_id = current_user.id
         @review.product_id = params[:product_id]
 
         if @review.save
@@ -19,9 +19,6 @@ class ReviewController < ApplicationController
         @review.destroy
         redirect_to "/products/#{params[:product_id]}"
     end
-
-    
-    
 
     private
     def review_params

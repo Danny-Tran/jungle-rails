@@ -29,10 +29,9 @@
       <div class="each-review" style="border-bottom: 1px solid #ccc">
         <dd><strong>User Review: </strong><%= c.description %></dd>
         <dd><strong>Rating: </strong><%= c.rating %></dd>
-        <dd><strong>Review By: </strong> User ID <%= c.id %></dd>
-        <% if current_user %>
+        <dd><strong>Review By: </strong> User ID  <%= c.user_id %></dd>
+        <% if current_user.id == c.user_id %>
         <%= link_to fa_icon('trash'), product_review_url(c.product_id, c.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Please, Confirm?" } %>
-        
         <% end %>
       </div>
     <% end %>
