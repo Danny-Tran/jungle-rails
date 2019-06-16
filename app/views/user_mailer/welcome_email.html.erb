@@ -10,7 +10,7 @@
       Hello <%= @order.email %>
       you have bought 
       <% @order.line_items.all.each do |item| %>
-        <li></li><%= render 'item', item:item %></li>
+        <li><%= render 'item', item:item %></li>
       <% end %>
       the total is <%= @order.total_cents/100.0 %>
     </p>
