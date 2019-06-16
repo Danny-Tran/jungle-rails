@@ -39,7 +39,7 @@
       
     <div>
       <% if current_user %>
-      <%= form_for :review ,url: product_review_index_path(@product) do |f| %>
+      <%= form_for @review ,url: product_review_index_path(@product) do |f| %>
       <h2>New Review</h2>
       Description : <%= f.text_area :description %><br />
       Rating : <%= f.select :rating, [1, 2, 3, 4, 5]%><br />
