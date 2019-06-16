@@ -32,6 +32,7 @@
     </table>
   </div>
 
+  <% if current_user %>
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -46,7 +47,9 @@
           data-currency="cad">
         </script>
       <% end %>
+      <% else %>
+      <h3>To Process this order, please <%= link_to  "Login.", '/login' %></h3>
     </div>
   </div>
-
+  <% end %>
 </section>

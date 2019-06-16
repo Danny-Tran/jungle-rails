@@ -17,7 +17,7 @@ main section.products-index .products .product,
 main section.categories-show .products .product {
   max-width: 260px;
   position: relative;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(241, 2, 2);
   border-radius: 5px;
   padding: 15px;
   padding-bottom: 80px;
@@ -37,7 +37,7 @@ main section.categories-show .products .product footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #EEE;
+  background-color: rgb(231, 231, 231);
   padding: 15px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -84,4 +84,8 @@ main section.categories-show .products .product:hover footer {
 main section.products-show .product-detail img.main-img {
   max-width: 100%;
 }
+main section.products-show .product-detail .each-review{
+  margin: 10px,
+}
+
 /*# sourceMappingURL=products.css.map */

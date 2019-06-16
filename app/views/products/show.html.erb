@@ -5,9 +5,7 @@
   </header>
 
   <article class="product-detail">
-
     <div class="row">
-
       <div class="col-sm-4">
         <%= image_tag @product.image.url, class: 'main-img' %>
       </div>
@@ -23,17 +21,33 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
         </dl>
+      </div>
+    </div>  
+      
+      
+    <% @order_review.each do |c| %>
+      <div class="each-review" style="border-bottom: 1px solid #ccc">
+        <dd><strong>User Review: </strong><%= c.description %></dd>
+        <dd><strong>Rating: </strong><%= c.rating %></dd>
+        <dd><strong>Review By: </strong> User ID <%= c.id %></dd>
+        <% if current_user %>
+        <%= link_to fa_icon('trash'), product_review_url(c.product_id, c.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Please, Confirm?" } %>
         
-        </div class="each-review">
-        <dd>User ID <%= @product.review[0].user_id %></dd>
-        <dt>Review</dt>
-        <dd><%= @product.review[0].description %></dd>
-        <dt>Rating</dt>
-        <dd><%= @product.review[0].rating %></dd>
-        </div>
-        
+        <% end %>
+      </div>
+    <% end %>
+    
+      
+    <div>
+      <% if current_user %>
+      <%= form_for @review ,url: product_review_index_path(@product) do |f| %>
+      <h2>New Review</h2>
+      Description : <%= f.text_area :description %><br />
+      Rating : <%= f.select :rating, [1, 2, 3, 4, 5]%><br />
+      <%= f.submit %>
+      <% end %>
+      <% end %>
     </div>
-
   </article>
-
 </section>
+
